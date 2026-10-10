@@ -1,3 +1,4 @@
+// Solution for problem 105 - expected days calculation
 #include <bits/stdc++.h>
 using namespace std;
 int main(){
@@ -12,10 +13,15 @@ int main(){
         E[i] = 1.0L + sum / i;
     }
     long double raw = E[n];
-    // add a tiny epsilon to handle binary representation edge cases
-    long double rounded = floor(raw * 100.0L + 0.5000000001L) / 100.0L;
-    cout.setf(ios::fixed);
-    cout<<setprecision(2)<<(double)rounded<<"\n";
+    // robust rounding to two decimal places (half up)
+    long double val = raw * 100.0L;
+    long long iv = (long long) floor(val + 0.5L + 1e-12L);
+    double rounded = iv / 100.0;
+    printf("%.2f\n", rounded);
     return 0;
 }
+
+
+
+
 
