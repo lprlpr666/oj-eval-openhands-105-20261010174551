@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <iomanip>
+#include <cmath>
 using namespace std;
 
 int main(){
@@ -17,7 +18,9 @@ int main(){
         }
         E[i] = 1.0L + sum / i;
     }
+    long double raw = E[n];
+    long double rounded = floor(raw * 100.0L + 0.5L) / 100.0L;
     cout.setf(ios::fixed);
-    cout<<setprecision(2)<< (long double)E[n] <<"\n";
+    cout<<setprecision(2)<< (double)rounded <<"\n";
     return 0;
 }
