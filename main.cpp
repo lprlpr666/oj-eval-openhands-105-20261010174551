@@ -1,4 +1,5 @@
-#include <bits/stdc++.h>
+#include <iostream>
+#include <vector>
 #include <iomanip>
 using namespace std;
 
@@ -17,6 +18,6 @@ int main(){
         E[i] = 1.0L + sum / i;
     }
     cout.setf(ios::fixed);
-    cout<<setprecision(2)<< (double)E[n] <<"\n";
+    cout<<setprecision(2)<< (long double)E[n] <<"\n";
     return 0;
 }
